@@ -11,6 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@claudy-map/shared-types": "workspace:*",
+    "@supabase/supabase-js": "^2.110.8",
     "dotenv": "^16.4.7",
     "fastify": "^5.2.0"
   },
