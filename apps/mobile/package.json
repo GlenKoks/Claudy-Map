@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "dependencies": {
-    "@claudy-map/shared-types": "workspace:*",
     "@react-native-async-storage/async-storage": "2.2.0",
-    "@supabase/supabase-js": "^2.110.8",
     "expo": "~57.0.8",
     "expo-constants": "~57.0.7",
     "expo-dev-client": "~57.0.9",
@@ -18,8 +16,6 @@
     "react-native": "0.86.0",
     "react-native-safe-area-context": "~5.7.0",
     "react-native-screens": "~4.26.2",
-    "react-native-url-polyfill": "^2.0.0",
-    "react-native-webview": "13.16.1",
     "zustand": "^5.0.14"
   },
   "devDependencies": {

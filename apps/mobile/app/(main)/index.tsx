@@ -6,7 +6,6 @@ import { colors, spacing } from "../../src/theme";
 
 export default function MainScreen() {
   const user = useAuthStore((s) => s.user);
-  const isDev = useAuthStore((s) => s.isDev);
   const signOut = useAuthStore((s) => s.signOut);
 
   return (
@@ -16,10 +15,8 @@ export default function MainScreen() {
         <Text style={styles.title}>Hello Claudy Map</Text>
         <Text style={styles.body}>
           Ты вошёл как{" "}
-          <Text style={styles.bold}>
-            {user?.firstName ?? user?.username ?? "пользователь"}
-          </Text>
-          {isDev ? " (dev-режим)" : ""}.
+          <Text style={styles.bold}>{user?.displayName ?? "гость"}</Text> (вход
+          в режиме заглушки).
         </Text>
         <Text style={styles.note}>
           Карта и туман появятся на следующих этапах.
