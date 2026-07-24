@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Claudy Map",
+    "slug": "claudy-map",
+    "scheme": "claudymap",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.claudymap.app"
+    },
+    "android": {
+      "package": "com.claudymap.app",
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {},
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
