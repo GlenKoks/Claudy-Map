@@ -1,0 +1,24 @@
+# OSRM routing engine for Claudy Map
+#
+# This is a skeleton. Before `docker compose up` you must download an OSM
+# extract and pre-process it (osrm-extract / osrm-partition / osrm-customize).
+# See ./README.md for the full step-by-step.
+#
+# The processed .osrm* files are expected in ./data (git-ignored).
+
+services:
+  osrm:
+    image: osrm/osrm-backend:latest
+    container_name: claudy-map-osrm
+    # The routing algorithm must match how the data was prepared:
+    #   - partition + customize  -> use "osrm-routed --algorithm mld"
+    #   - contract               -> use "osrm-routed --algorithm ch"
+    # We use MLD (multi-level Dijkstra) below; adjust the file name to your extract.
+    command: osrm-routed --algorithm mld /data/moscow-latest.osrm
+    volumes:
+      # Place the prepared .osrm* files here (see README). Git-ignored.
+      - ./data:/data
+    ports:
+      # OSRM HTTP API. The server reads this as OSRM_URL=http://localhost:5000
+      - "5000:5000"
+    restart: unless-stopped
