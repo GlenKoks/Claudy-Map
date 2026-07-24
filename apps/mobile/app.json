@@ -5,7 +5,8 @@
     "scheme": "claudymap",
     "version": "1.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0E1116",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
@@ -17,7 +18,15 @@
     },
     "web": {},
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Claudy Map использует геолокацию, чтобы открывать карту по мере твоих прогулок.",
+          "locationAlwaysAndWhenInUsePermission": "Claudy Map использует геолокацию в фоне, чтобы фиксировать маршрут и рассеивать туман, пока экран заблокирован.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ]
     ]
   }
 }
